@@ -41,4 +41,4 @@ Then open `http://127.0.0.1:8050` in your browser.
 Built as a personal portfolio project for educational and demonstrative purposes. Not financial advice.
 
 ---
-Built by [Dhanush Chandar Sivakumar](https://www.linkedin.com/in/dhanushchandarsivakumar)
+Built by [Dhanush Chandar Sivakumar](https://www.linkedin.com/in/dhanush-chandar-sivakumar/)
