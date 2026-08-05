@@ -330,6 +330,7 @@ def page_home():
     return html.Div(className="page page-home", children=[
         html.Section(className="hero", children=[
             html.Div(className="hero-copy", children=[
+                html.P("Best viewed on desktop — mobile layout is limited.", className="view-notice"),
                 html.P("Rate Days", className="brand"),
                 html.H1("Bank of Canada rate announcements and Big Five equity reactions"),
                 html.P(
