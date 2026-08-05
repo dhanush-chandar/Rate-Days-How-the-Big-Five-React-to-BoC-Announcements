@@ -218,42 +218,40 @@ raw_table = dash_table.DataTable(
 app = Dash(__name__)
 server = app.server  # needed for Render deployment
 
-app.layout = html.Div(style={
-    "backgroundColor": "#FFFFFF",
-    "fontFamily": "Arial, sans-serif",
-    "padding": "30px"
-}, children=[
+app.layout = html.Div(children=[
 
-    html.H1("Rate Days: How the Big Five React to BoC Announcements",
-            style={"textAlign": "center", "color": "#1A1A1A", "marginBottom": "10px"}),
-
-    html.P("An analysis of Canadian bank stock behaviour around Bank of Canada rate announcements",
-           style={"textAlign": "center", "color": "#666666", "marginBottom": "40px"}),
-
-    html.Div(style={"display": "grid", "gridTemplateColumns": "1fr 1fr", "gap": "30px"}, children=[
-        dcc.Graph(figure=fig1),
-        dcc.Graph(figure=fig2),
+    html.Div(className="header", children=[
+        html.P("BANK OF CANADA RATE ANALYSIS", className="eyebrow"),
+        html.H1("Rate Days: How the Big Five React to BoC Announcements"),
+        html.P("An analysis of Canadian bank stock behaviour around Bank of Canada rate announcements"),
     ]),
 
-    html.Div(style={"marginTop": "10px"}, children=[
-        html.H3("Summary Table", style={"color": "#1A1A1A", "marginBottom": "10px"}),
-        table_component,
+    html.Div(className="body-container", children=[
+
+        html.Div(className="grid-2col", children=[
+            html.Div(className="card", children=[dcc.Graph(figure=fig1, config={"responsive": True})]),
+            html.Div(className="card", children=[dcc.Graph(figure=fig2, config={"responsive": True})]),
+        ]),
+
+        html.Div(className="card", children=[
+            html.H3("Summary Table"),
+            table_component,
+        ]),
+
+        html.Div(className="card", children=[dcc.Graph(figure=fig3, config={"responsive": True})]),
+        html.Div(className="card", children=[dcc.Graph(figure=fig4, config={"responsive": True})]),
+
+        html.Div(className="card", children=[
+            html.H3("Raw Data"),
+            raw_table
+        ]),
+
+        html.Div(className="card", children=about_section.children),
     ]),
 
-    html.Div(style={"marginTop": "30px"}, children=[
-        dcc.Graph(figure=fig3),
-    ]),
-
-    html.Div(style={"marginTop": "30px"}, children=[
-        dcc.Graph(figure=fig4),
-    ]),
-
-    html.Div(style={"marginTop": "30px"}, children=[
-        html.H3("Raw Data", style={"color": "#1A1A1A", "marginBottom": "10px"}),
-        raw_table
-    ]),
-
-    about_section,
+    html.Div(className="footer", children=[
+        html.P("Built by Dhanush Chandar Sivakumar")
+    ])
 ])
 
 if __name__ == "__main__":
