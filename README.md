@@ -17,7 +17,7 @@ Contrary to the assumption that all bank stocks would react similarly to rate an
 
 ## Data
 
-- **Stock prices:** pulled via [yfinance](https://pypi.org/project/yfinance/) (Yahoo Finance), Jan 2025–Aug 2026
+- **Stock prices:** cached snapshot in `stock_data.csv` (originally via [yfinance](https://pypi.org/project/yfinance/) / Yahoo Finance), Jan 2025–Aug 2026
 - **Rate announcement dates:** Bank of Canada's public schedule, 13 announcements covered
 
 ## Stack
